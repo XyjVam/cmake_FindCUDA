@@ -1650,11 +1650,13 @@ macro(CUDA_ADD_LIBRARY cuda_target)
   CUDA_LINK_SEPARABLE_COMPILATION_OBJECTS("${link_file}" ${cuda_target} "${_options}" "${${cuda_target}_SEPARABLE_COMPILATION_OBJECTS}")
 
   target_link_libraries(${cuda_target}
+    PUBLIC
     ${CUDA_LIBRARIES}
     )
 
   if(CUDA_BUILD_WITH_CUFFT_STATIC)
     target_link_libraries(${cuda_target}
+      PRIVATE
       ${CUDA_cufft_static_LIBRARY}
       ${CUDA_culibos_LIBRARY}
       )
