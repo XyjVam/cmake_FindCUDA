@@ -4,7 +4,7 @@ Fix for cmake FindCUDA.cmake for compilation with cufft_static
 ## Usage:
 
 
-set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/../../cmake_FindCUDA/cmake/Modules" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${/../cmake_FindCUDA/cmake/Modules" ${CMAKE_MODULE_PATH})
 
 find_package(CUDA REQUIRED)
 
