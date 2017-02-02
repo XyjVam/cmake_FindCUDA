@@ -1155,6 +1155,7 @@ macro(CUDA_WRAP_SRCS cuda_target format generated_files)
 
   if(CUDA_HOST_COMPILATION_CPP)
     set(CUDA_C_OR_CXX CXX)
+    STRING(REGEX REPLACE "c++14" "c++11" CUDA_C_OR_CXX ${CUDA_C_OR_CXX})
   else()
     if(CUDA_VERSION VERSION_LESS "3.0")
       set(nvcc_flags ${nvcc_flags} --host-compilation C)
